@@ -10,25 +10,25 @@ AFRAME.registerComponent("ball", {
       });
     },
     createBall:function(){
-        var  ball = document.createElement("a-entity");
+        var  ballEl = document.createElement("a-entity");
   
-          ball.setAttribute("gltf-model", "./Assets/bowling_ball/scene.gltf");
+          ballEl.setAttribute("gltf-model", "./Assets/bowling_ball/scene.gltf");
   
-          ball.setAttribute("scale", { x: 3, y: 3,  z: 3});
+          ballEl.setAttribute("scale", { x: 3, y: 3,  z: 3});
   
-          var camera = document.querySelector("#camera").object3D;
+          var cameraEl = document.querySelector("#camera").object3D;
   
 
           var direction = new THREE.Vector3();
-          camera.getWorldDirection(direction);
+          cameraEl.getWorldDirection(direction);
   
 
-          ball.setAttribute("velocity", direction.multiplyScalar(-10));
-          ball.setAttribute('position',{y:0.5})
+          ballEl.setAttribute("velocity", direction.multiplyScalar(-10));
+          ballEl.setAttribute('position',{y:0.5})
   
-          var scene = document.querySelector("#scene");
+          var sceneEl = document.querySelector("#scene");
   
-          scene.appendChild(ball);
+          sceneEl.appendChild(ballEl);
     }
   });
   
